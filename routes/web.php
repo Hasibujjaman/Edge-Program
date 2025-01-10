@@ -19,3 +19,8 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/greeting', function () {
+    // return "<h1>Welcome to greetings<h1>";
+    return view('greeting');
+});
