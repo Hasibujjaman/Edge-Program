@@ -4,7 +4,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return "welcome to laravel";
 });
 
 Route::get('/dashboard', function () {
@@ -18,3 +19,15 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('/greeting', function () {
+    // return "<h1>Welcome to greetings<h1>";
+    return view('greeting');
+});
+
+
+
+Route::get('/users', function () {
+    $users = ["Emon", "Taki", "John"];
+    return view('users', compact('users'));
+});
