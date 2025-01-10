@@ -24,3 +24,10 @@ Route::get('/greeting', function () {
     // return "<h1>Welcome to greetings<h1>";
     return view('greeting');
 });
+
+
+
+Route::get('/users', function () {
+    $users = ["Emon", "Taki", "John"];
+    return view('users', compact('users'));
+});
