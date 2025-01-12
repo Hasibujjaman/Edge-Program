@@ -1,11 +1,12 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return view('welcome');
-    return "welcome to laravel";
+    return view('home');
 });
 
 Route::get('/dashboard', function () {
@@ -28,6 +29,6 @@ Route::get('/greeting', function () {
 
 
 Route::get('/users', function () {
-    $users = ["Emon", "Taki", "John"];
+    $users = User::all();
     return view('users', compact('users'));
 });
